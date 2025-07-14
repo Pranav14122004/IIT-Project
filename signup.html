@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CampusJot - Sign Up</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="auth-bg">
+    <nav class="navbar">
+        <div class="logo">
+            <a href="index.html">Campus<span class="logo-accent">Jot</span></a>
+        </div>
+        <a href="sigin.html" class="nav-btn">Login</a> <!-- Fixed typo: 'singin.html' to 'signin.html' -->
+    </nav>
+
+    <main class="auth-main">
+        <div class="auth-illustration signup-illustration">
+            <img src="images/singup.jpg" alt="Sign Up Illustration" style="width:100%; height:120%; border-radius: 32px;">
+        </div>
+
+        <form class="auth-form" action="#" method="POST">
+            <h2>Sign up</h2>
+            <label>Email</label>
+            <input type="email" placeholder="yourname@email.com" required>
+            
+            <label>Username</label>
+            <input type="text" placeholder="yourusername" required>
+            
+            <label>Password</label>
+            <input type="password" placeholder="abc123" required>
+            
+            <div class="terms">
+                <input type="checkbox" id="terms" required>
+                <label for="terms">I agree to the <a href="#">terms and conditions</a></label>
+            </div>
+
+            <button type="submit" class="cta-btn">Sign me up</button>
+        </form>
+    </main>
+</body>
+</html>
