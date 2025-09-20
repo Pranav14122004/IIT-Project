@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CampusJot - Final Year Btech</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    
+    <aside class="sidebar">
+    <a href="folders.html" class="logo">CampusJot</a>
+    <ul class="menu">
+        <li class="active">
+            <a href="group.html">Group</a></li>
+    </ul>
+  </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+      
+      <!-- Top Bar -->
+      <header class="top-bar">
+        <div class="user-info">
+          <span>user123</span>
+          <span class="user-icon">  </span>
+          <button class="logout-btn" onclick="window.location.href='login.html'">Log out</button>
+
+        </div>
+      </header>
+
+      <!-- Page Header -->
+      <section class="page-header">
+        <h1>Final Year Btech</h1>
+        <div class="actions">
+          <a href="#createFolderPopup " class="action-btn">Create Folder</a>
+          <a href="#addMemberPopup" class="action-btn">Add Member</a>
+          <a href="#memberListPopup" class="action-btn">Member List</a>
+        </div>
+      </section>
+
+      <!-- Table -->
+      <section class="table-section">
+        <table>
+          <thead>
+            <tr>
+              <th>Subject Name</th>
+              <th>Latest update</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Maths</td>
+              <td>Jun 14, 2025 <a href="folders.html" class="view-btn">View</a></td>
+            </tr>
+            <tr>
+              <td>Science</td>
+              <td>Jun 25, 2025 <a href="folders.html" class="view-btn">View</a></td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+    </main>
+  </div>
+</body>
+<!-- Create Folder Popup -->
+<div id="createFolderPopup" class="popup">
+  <div class="popup-content">
+    <a href="#" class="close">&times;</a>
+    <h2>Create Folder</h2>
+    <input type="text" placeholder="Enter folder name">
+    <button class="popup-btn" onclick="window.location.href='folders.html'">Create</button>
+  </div>
+</div>
+
+<!-- Add Member Popup -->
+<div id="addMemberPopup" class="popup">
+  <div class="popup-content">
+    <a href="#" class="close">&times;</a>
+    <h2>Add Member</h2>
+    <input type="email" placeholder="Enter member email">
+    <button class="popup-btn" onclick="window.location.href='memberListPopup'">Add</button>
+
+  </div>
+</div>
+
+<!-- Member List Popup -->
+<div id="memberListPopup" class="popup">
+  <div class="popup-content">
+    <a href="#" class="close">&times;</a>
+    <h2>Member List</h2>
+
+
+    <!-- Static/Dummy Member List -->
+    <ul>
+      <li>user123@example.com</li>
+      <li>user456@example.com</li>
+      <li>user789@example.com</li>
+    </ul>
+  </div>
+</div>
+
+</html>

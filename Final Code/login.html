@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login - CampusJot</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <a href="index.html" class="logo">CampusJot</a>
+    <div class="auth-buttons">
+      <a href="signup.html" class="btn-signup">Sign Up</a>
+    </div>
+  </header>
+
+  <main>
+    <div class="hero-container">
+      <div class="illustration">
+        <img src="images/login.jpg" alt="Students collaborating" width="300" height="400" />
+      </div>
+
+      <div class="form-box">
+        <h2>Log In</h2>
+        <form id="loginForm">
+          <input type="email" placeholder="yourname@email.com" required />
+          <input type="password" placeholder="abc123" required />
+          <button type="submit" class="cta-button">Log In</button>
+        </form>
+      </div>
+    </div>
+  </main>
+
+  <script>
+    // ✅ Redirect to main dashboard after login
+    document.getElementById("loginForm").addEventListener("submit", function(e) {
+      e.preventDefault(); // stop page refresh
+      window.location.href = "user home page.html"; // go to your main page
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CampusJot - Repo</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* ✅ Download message style */
+    .download-msg {
+      display: none;
+      position: fixed;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #0a0420;
+      color: #fff;
+      padding: 12px 25px;
+      border-radius: 12px;
+      font-size: 16px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+      z-index: 1000;
+    }
+    .download-msg.show {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .download-msg span {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+
+    <aside class="sidebar">
+      <a href="folders.html" class="logo">CampusJot</a>
+      <ul class="menu">
+        <li><a href="folders.html">Folders</a></li>
+        <li><a href="group.html">Group</a></li>
+      </ul>
+    </aside>
+
+    <!-- Main Content -->
+    <div class="main-content">
+      <!-- Header -->
+      <header>
+        <div></div>
+        <div class="user-box">
+          <span class="username">user123</span>
+          <button class="logout-btn">Log out</button>
+        </div>
+      </header>
+
+      <!-- Repo Section -->
+      <div class="repo-header">
+        <div class="repo-name">user123 / test repo</div>
+        <div class="top-buttons">
+          <button class="create-btn">Upload notes</button>
+          <a href="#create-popup" class="create-btn">Create Note File</a>
+        </div>
+      </div>
+
+      <!-- Repo Table -->
+      <table>
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Student mail</th>
+            <th>Latest update</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>chapter1.txt</td>
+            <td>abc@mail</td>
+            <td>Jun 14, 2025 
+              <a href="editing files.html" style="color:#fff;cursor:pointer;">Edit</a>
+            </td>
+          </tr>
+          <tr>
+            <td>chapter2.txt</td>
+            <td>xyz@mail</td>
+            <td>Jun 25, 2025 
+              <a href="editing files.html" style="color:#fff;cursor:pointer;">Edit</a>
+            </td>
+          </tr>
+          <tr>
+            <td>chapter3.pdf</td>
+            <td>pq@mail</td>
+            <td>July 04, 2025 
+              <span class="download-btn" style="color:#fff;cursor:pointer;">Download</span>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- Create Note File Popup -->
+  <div id="create-popup" class="popup">
+    <div class="popup-content">
+      <a href="#" class="close">&times;</a>
+      <h3 style="text-align:left; margin-bottom:10px;">File Name</h3>
+      <input type="text" placeholder="File Name">
+      <button class="popup-btn">Create</button>
+    </div>
+  </div>
+
+  <!-- Download Notification -->
+  <div id="download-msg" class="download-msg">
+    <span>⬇️ Download Started, if not click again on Download Button</span>
+  </div>
+
+  <script>
+    // ✅ Handle Download Button Click
+    document.querySelectorAll(".download-btn").forEach(btn => {
+      btn.addEventListener("click", () => {
+        let msg = document.getElementById("download-msg");
+        msg.classList.add("show");
+
+        // Hide after 4 seconds
+        setTimeout(() => {
+          msg.classList.remove("show");
+        }, 4000);
+      });
+    });
+  </script>
+</body>
+</html>
