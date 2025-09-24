@@ -3,36 +3,56 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Login - CampusJot</title>
-  <link rel="stylesheet" href="style.css" />
+  <title>Sign Up - CampusJot</title>
+  <link rel="stylesheet" href="style.css" /> 
 </head>
 <body>
   <header>
     <a href="index.html" class="logo">CampusJot</a>
     <div class="auth-buttons">
-      <a href="signup.html" class="btn-signup">Sign Up</a>
+      <a href="login.html" class="btn-signup">Log In</a>
     </div>
   </header>
   <main>
     <div class="hero-container">
-      <div class="illustration">
-        <img src="images/login.jpg" alt="Students collaborating" width="300" height="400" />
-      </div>
       <div class="form-box">
-        <h2>Log In</h2>
-        <form id="loginForm">
-          <input type="email" placeholder="yourname@email.com" required />
-          <input type="password" placeholder="abc123" required />
-          <button type="submit" class="cta-button">Log In</button>
+        <h2>Create Account</h2>
+        <form id="signupForm">
+          
+          <label for="username">Username</label>
+          <input 
+            type="text" 
+            id="username"
+            placeholder="Choose a username" 
+            required 
+            pattern="^\S*$"
+            title="Username cannot contain spaces." 
+          />
+
+          <label for="groupname">Group Name</label>
+          <input 
+            type="text"
+            id="groupname" 
+            placeholder="e.g., Study Group Alpha" 
+            required 
+            pattern="^[^_]*$"
+            title="Group name cannot contain underscores (_)." 
+          />
+
+          <label for="password">Password</label>
+          <input 
+            type="password" 
+            id="password"
+            placeholder="Create a password" 
+            required 
+            pattern=".{8,}"
+            title="Password must be 8 or more characters long." 
+          />
+
+          <button type="submit" class="cta-button">Sign Up</button>
         </form>
       </div>
     </div>
   </main>
-  <script>
-    document.getElementById("loginForm").addEventListener("submit", function(e) {
-      e.preventDefault();
-      window.location.href = "user home page.html";
-    });
-  </script>
 </body>
 </html>
