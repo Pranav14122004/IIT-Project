@@ -21,9 +21,25 @@
       <div class="form-box">
         <h2>Sign Up</h2>
         <form action="#">
+          
           <input type="email" placeholder="yourname@email.com" required />
-          <input type="text" placeholder="yourusername" required />
-          <input type="password" placeholder="abc123" required />
+          
+          <input 
+            type="text" 
+            placeholder="yourusername" 
+            required 
+            pattern="^\S*$"
+            title="Username cannot contain spaces." 
+          />
+          
+          <input 
+            type="password" 
+            placeholder="Create a password" 
+            required 
+            pattern=".{8,}"
+            title="Password must be 8 or more characters long." 
+          />
+          
           <button type="submit" class="cta-button">Sign me up</button>
         </form>
       </div>
