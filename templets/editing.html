@@ -31,16 +31,19 @@
             <span class="username" th:text="${session.username}">user123</span>
             <a th:href="@{/logout}" class="logout-btn">Log out</a>
           </div>
-          <button type="submit" class="save-btn">Save 💾</button>
+          <div class="action-buttons">
+            <button type="button" class="save-btn" onclick="history.back()">Go Back</button>
+            <button type="submit" class="save-btn">Save 💾</button>
+          </div>
         </div>
       </header>
 
       <section class="code-box">
         <textarea name="content" class="code-editor" th:text="${fileContent}">
-          &lt;!DOCTYPE html&gt;
-          &lt;html&gt;
-          ...
-          &lt;/html&gt;
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+...
+&lt;/html&gt;
         </textarea>
       </section>
 
