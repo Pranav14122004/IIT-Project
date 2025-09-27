@@ -21,12 +21,30 @@
       <div class="form-box">
         <h2>Log In</h2>
         <form th:action="@{/login}" method="POST">
-          <input type="text" name="username" placeholder="yourusername" required />
-          <input type="password" name="password" placeholder="abc123" required />
+          <!-- Username: no underscores -->
+          <input 
+            type="text" 
+            name="username" 
+            placeholder="yourusername" 
+            required 
+            pattern="^[^_]+$" 
+            title="Username must not contain underscores" 
+          />
+
+          <!-- Password: at least 8 characters -->
+          <input 
+            type="password" 
+            name="password" 
+            placeholder="abc123" 
+            required 
+            pattern=".{8,}" 
+            title="Password must be at least 8 characters long" 
+          />
+
           <button type="submit" class="cta-button">Log In</button>
         </form>
       </div>
     </div>
   </main>
-  </body>
+</body>
 </html>
