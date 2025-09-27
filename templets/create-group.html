@@ -12,15 +12,10 @@
       <nav>
         <ul class="menu">
           <a href="user home page.html" class="logo">CampusJot</a>
-          <!--
-           <li><a href="folders.html">Folders</a></li>
-          <li><a href="group.html">Groups</a></li> 
-        -->
         </ul>
       </nav>
     </div>
     
-
     <div class="main-content">
       <header class="top-bar" style="justify-content: flex-end;">
         <div class="user-box">
@@ -36,15 +31,53 @@
           <input type="text" id="group-name" placeholder="repo123">
 
           <label for="contributors">Contributors Mails</label>
-          <div style="display: flex; gap: 8px;">
-            <input type="email" id="contributors" placeholder="Emails">
-            <button type="button" class="create-btn"><span class="plus">+</span></button>
+
+          <!-- Container for contributor inputs -->
+          <div id="contributors-list">
+            <div>
+              <input type="email" name="contributors[]" placeholder="Enter contributor email" required>
+              <button type="button" id="add-contributor">+</button>
+            </div>
           </div>
-          <input type="text" value="abc@mail">
+
           <a href="group.html" class="create-btn">Create</a>
         </form>
       </div>
     </div>
   </div>
+
+  <!-- ✅ JavaScript -->
+  <script>
+    document.getElementById("add-contributor").addEventListener("click", function () {
+      let container = document.getElementById("contributors-list");
+
+      // Create wrapper div for new input
+      let newField = document.createElement("div");
+
+      // Create input
+      let input = document.createElement("input");
+      input.type = "email";
+      input.name = "contributors[]";
+      input.placeholder = "Enter contributor email";
+      input.required = true;
+
+      // Create remove button
+      let removeBtn = document.createElement("button");
+      removeBtn.type = "button";
+      removeBtn.textContent = "−";
+
+      // Remove the field when clicked
+      removeBtn.addEventListener("click", function () {
+        container.removeChild(newField);
+      });
+
+      // Append input + remove button to wrapper
+      newField.appendChild(input);
+      newField.appendChild(removeBtn);
+
+      // Add wrapper to container
+      container.appendChild(newField);
+    });
+  </script>
 </body>
 </html>
